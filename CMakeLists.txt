@@ -52,6 +52,7 @@ set(CMAKE_EXE_LINKER_FLAGS "-T ${CMAKE_CURRENT_SOURCE_DIR}/linker/linker.ld \
 
 # Add subdirectory for the STM32 HAL library
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/STM32L0xx_HAL_ST stm32l0xx_hal_st)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/sr04t sr04t)
 
 # Define the executable target for the project
 # This will compile and link the sources into the final executable
@@ -60,4 +61,5 @@ add_executable(${PROJECT_NAME}_appl.out ${SOURCES})
 # Link the executable with the STM32 HAL library
 target_link_libraries(${PROJECT_NAME}_appl.out 
     stm32l0xx_hal_st  # STM32 HAL static library
+    sr04t             # SR04T static library
 )
