@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "sr04t.h": "c",
-        "stdint.h": "c",
-        "stddef.h": "c"
-    }
-}
