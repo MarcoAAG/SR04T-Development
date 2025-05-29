@@ -20,12 +20,12 @@ extern "C" {
 static uint32_t SR04T_WriteCommand(uint8_t* pData, uint8_t Length);
 static uint32_t SR04T_ReadData(uint8_t* pData, uint8_t Length);
 
-SR04T_IO_t SR04T_IO = {
-  .WriteReg = SR04T_WriteCommand,
-  .ReadReg  = SR04T_ReadData,
+SR04T_IO t_SR04T_IO = {
+  .writeReg = SR04T_WriteCommand,
+  .readReg  = SR04T_ReadData,
 };
 
-SR04T_Object_t     SR04T_Obj;
+SR04T_Object       SR04T_Obj;
 UART_HandleTypeDef UartHandle;
 
 int main()
@@ -56,7 +56,7 @@ int main()
     /* Initialization Error */
   }
 
-  SR04T_v_INIT(&SR04T_Obj, &SR04T_IO);
+  SR04T_u_Init(&SR04T_Obj, &t_SR04T_IO);
 
   // Infinite loop
   while(1)
